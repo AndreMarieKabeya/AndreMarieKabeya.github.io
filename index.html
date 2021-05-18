@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <meta charset="utf-8">
-    <title>Questionnaire d'André</title>
-  </head>
-  <body>
 
-  </body>
+<head>
+  <link rel="stylesheet" href="CSS/styles.css">
+  <meta charset="utf-8">
+  <title>Questionnaire d'André</title>
+</head>
+
+<body>
+  <p>Pour plus d'informations sur le site sur lequel est basé ce sondage, veuillez visitez <a href="https://www.teletoon.com/" target="_blank">Teletoon</a></p>
+  <a href="https://www.teletoon.com/" target="_blank" title="Cliquez sur l'image pour vous rendre sur la page web de Teletoon">
+    <img src="Images/website_image.png" alt="Teletoon's landing page">
+  </a>
+  <hr>
+  <h1 class="surveyHeader">Survey starts here...</h1>
+  <div class="form">
+    <form class="questions" action="index.html" method="post">
+        <p>Quel est votre prénom ?</p>
+        <input type="text" name="" value=""><br>
+        <p>Quel est votre niveau de familiarité avec notre plateforme ?</p>
+        <input type="radio" id="tresFamilier" name="familiarity" value="tresFamilier">
+        <label for="tresFamilier">Très familier</label><br>
+        <input type="radio" id="familier" name="familiarity" value="familier">
+        <label for="familier">Familier</label><br>
+        <input type="radio" id="pasFamilier" name="familiarity" value="pasFamilier">
+        <label for="tresFamilier">Pas familier</label><br>
+    </form>
+  </div>
+</body>
+
 </html>
