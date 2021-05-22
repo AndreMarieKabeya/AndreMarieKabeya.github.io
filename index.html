@@ -3,29 +3,133 @@
 
 <head>
   <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Bungee+Shade&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <title>Questionnaire d'André</title>
 </head>
 
 <body>
-  <p>Pour plus d'informations sur le site sur lequel est basé ce sondage, veuillez visitez <a href="https://www.teletoon.com/" target="_blank">Teletoon</a></p>
+  <h1 class="surveyHeader">Sondage sur l'interface usager du site de Teletoon</h1>
+  <p class="top">Pour plus d'informations sur le site sur lequel est basé ce sondage, veuillez visitez <a href="https://www.teletoon.com/" target="_blank">Teletoon</a></p>
   <a href="https://www.teletoon.com/" target="_blank" title="Cliquez sur l'image pour vous rendre sur la page web de Teletoon">
     <img src="Images/website_image.png" alt="Teletoon's landing page">
   </a>
   <hr>
-  <h1 class="surveyHeader">Survey starts here...</h1>
-  <div class="form">
-    <form class="questions" action="index.html" method="post">
-        <p>Quel est votre prénom ?</p>
-        <input type="text" name="" value=""><br>
-        <p>Quel est votre niveau de familiarité avec notre plateforme ?</p>
-        <input type="radio" id="tresFamilier" name="familiarity" value="tresFamilier">
-        <label for="tresFamilier">Très familier</label><br>
-        <input type="radio" id="familier" name="familiarity" value="familier">
-        <label for="familier">Familier</label><br>
-        <input type="radio" id="pasFamilier" name="familiarity" value="pasFamilier">
-        <label for="tresFamilier">Pas familier</label><br>
-    </form>
+  <form id="form" class="form" action="index.html" method="post">
+    <!--Premiere question-->
+    <div class="form-control">
+      <p>Quel est votre prénom ?</p>
+      <input type="text" name="firstName" value="">
+    </div>
+    <!--Deuxieme question-->
+    <div class="form-control">
+      <p>Sur une échelle de 1 à 10, quel est votre niveau d'appréciation de la page d'accueil ?</p>
+      <label class="scale">
+        <input type="radio" name="scale">1
+      </label>
+      <label class="scale">
+        <input type="radio" name="scale">2
+      </label>
+      <label class="scale">
+        <input type="radio" name="scale">3
+      </label>
+      <label class="scale">
+        <input type="radio" name="scale">4
+      </label>
+      <label class="scale">
+        <input type="radio" name="scale">5
+      </label>
+      <label class="scale">
+        <input type="radio" name="scale">6
+      </label>
+      <label class="scale">
+        <input type="radio" name="scale">7
+      </label>
+      <label class="scale">
+        <input type="radio" name="scale">8
+      </label>
+      <label class="scale">
+        <input type="radio" name="scale">9
+      </label>
+      <label class="scale">
+        <input type="radio" name="scale">10
+      </label>
+
+      <!--Troisième question-->
+      <div class="">
+        <br>
+        <p>Quelle est votre opinion au sujet de l'affirmation suivante: "L'interface usager est facile à utiliser" ?</p>
+        <label class="opinion">
+          <input type="radio" name="opinion">Totalement en désaccord
+        </label>
+        <label class="opinion">
+          <input type="radio" name="opinion">En désaccord
+        </label>
+        <label class="opinion">
+          <input type="radio" name="opinion">Neutre
+        </label>
+        <label class="opinion">
+          <input type="radio" name="opinion">En accord
+        </label>
+        <label class="opinion">
+          <input type="radio" name="opinion">Totalement en accord
+        </label>
+      </div>
+      <br>
+    </div>
+    <!--Quatrième question-->
+    <div class="form-control">
+      <br>
+      <label for="list">Pensez-vous que ce site web est cohérent en terme de fonctionnalité ?</label><br><br>
+      <select name="listOptions" id="chooseOption">
+        <option value="oui">Oui</option>
+        <option value="non">Non</option>
+        <option value="neutre">Préfère ne pas répondre</option>
+      </select>
+      <br>
+    </div>
+    <!--Cinquième question-->
+    <div class="form-control">
+      <br>
+      <p>Qu'appréciez-vous le plus de ce site web ?</p>
+      <input type="checkbox" name="check" value="check1">
+      <label for="check1">Les couleurs</label><br>
+      <input type="checkbox" name="check" value="check2">
+      <label for="check2">La disposition du texte</label><br>
+      <input type="checkbox" name="check" value="check3">
+      <label for="check3">La présentation du contenu</label>
+    </div>
+
+    <!--Sixième question-->
+    <div class="form-control">
+      <br>
+      <p>Combien de fois en moyenne visitez-vous ce site web par semaine ?</p>
+      <label class="average">
+        <input type="radio" name="average">1-2 fois
+      </label>
+      <label class="average">
+        <input type="radio" name="average">3-9 fois
+      </label>
+      <label class="average">
+        <input type="radio" name="average">Au moins 10 fois
+      </label>
+    </div>
+
+    <!--Espace de commentaires-->
+    <div class="form-control">
+      <br>
+      <label for="comment">Faites nous part de vos commentaires et suggestions</label><br><br>
+      <textarea name="comment" id="comment" rows="20" cols="100" placeholder="Entrez vos commentaires et suggestions ici"></textarea><br>
+    </div>
+  </form>
+  <button name="button">Soumettre</button>
+  <div class="footer">
+    <p>Site créé par André</p>
   </div>
 </body>
 

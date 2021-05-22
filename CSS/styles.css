@@ -1,23 +1,82 @@
 a{
   text-decoration: none;
 }
-body{
-  background-color: #c0fefc;
-}
+
 img{
-  height: 750px;
-  width: 750px;
+  height: 950px;
+  margin-left: 300px;
+  width: 900px;
 }
 
+body{
+  background-color: #b0efeb;
+}
+
+hr{
+  border-style: dotted none none none;
+  border-width: 10px;
+  color: #feffde;
+  margin: 50px auto;
+  width: 25%;
+}
+.form-control{
+  margin-left: 350px;
+}
 .surveyHeader{
-  color: blue;
   text-align: center;
 }
 
-.form{
-  vertical-align: middle;
+.top{
+  font-family: 'Satisfy', cursive;
+  font-size: 40px;
+  text-align: center;
 }
-input[type="radio"] {
-  margin-top: -1px;
-  vertical-align: middle;
+
+input[type=radio] {
+    display: block;
+    margin: 0 auto;
+}
+label {
+    display: inline-block;
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+option{
+  font-family: 'Baloo 2', cursive;
+  font-size: 20px;
+}
+
+.scale{
+  margin-right: 50px;
+}
+
+.average{
+  margin-right: 150px;
+}
+
+.opinion{
+  margin-right: 40px;
+}
+
+button{
+  background-color: #206a5d;
+  margin-left: 350px;
+  margin-top: 10px;
+  color: white;
+}
+
+h1{
+  font-family: 'Bungee Shade', cursive;
+  color:#4b778d;
+}
+
+p{
+  font-family: 'Baloo 2', cursive;
+  font-size: 20px;
+}
+
+.footer{
+  text-align: center;
 }
