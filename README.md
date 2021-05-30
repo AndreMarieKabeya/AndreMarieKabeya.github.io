@@ -1,1 +1,3 @@
-Lab 01 -Construction d'un sondage
+# SEG3525
+
+### Environnement utilisé pour tous les labs!
