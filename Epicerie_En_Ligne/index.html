@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- This style sheet is taken from https://www.w3schools.com/howto/howto_js_tabs.asp-->
+  <link href="styles/style.css" rel="stylesheet" type="text/css">
+  <title>Épicerie André et co.</title>
+</head>
+
+<body>
+  <h1>Bienvenue au site d'épicerie en ligne d'André et co.</h1>
+
+  <!-- Tab links, each one with an onclick event associated with it -->
+  <div class="tab">
+    <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+    <button class="tablinks" onclick="openInfo(event, 'Products')">Produits</button>
+    <button class="tablinks" onclick="openInfo(event, 'Cart')">Panier</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="Client" class="tabcontent">
+    <h3>Information du client</h3>
+    <p>Parlez-nous de vous.</p>
+    Choisissez une catégorie:
+    <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+      <option value=""></option>
+      <option value="lactoseIntolerant">Intolérant(e) au lactose</option>
+      <option value="nutAllergy">Allergies aux noix</option>
+      <option value="None">Aucun</option>
+    </select>
+    <p>Préférez-vous des produits organiques ?</p>
+    <select id="organicSelect" name="organicSelect" onchange="populateListProductChoices(this.id,'displayChoice')">
+      <option value=""></option>
+      <option value="yes">Oui</option>
+      <option value="no">Non</option>
+    </select>
+  </div>
+
+  <div id="Products" class="tabcontent">
+    <h3>Vos produits sélectionnés</h3>
+    <p>Nous affichons les produits en fonction de vos restrictions.</p>
+    Choisissez des produits à acheter:
+    <div id="displayProduct"></div>
+    <br>
+    <button id="addCart" type="button" class="block" onclick="selectedItems()">
+      Ajoutez les items choisis dans le panier.
+    </button>
+  </div>
+
+  <div id="Cart" class="tabcontent">
+    <h3>Panier</h3>
+    <p>Voici votre panier.</p>
+    <div id="displayCart"></div>
+  </div>
+
+  <script src="scripts/groceries.js"></script>
+  <script src="scripts/main.js"></script>
+  <footer>Site web créé par André.</footer>
+
+</body>
+
+</html>
