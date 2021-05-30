@@ -4,11 +4,13 @@
 <head>
   <!-- This style sheet is taken from https://www.w3schools.com/howto/howto_js_tabs.asp-->
   <link href="styles/style.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
   <title>Épicerie André et co.</title>
 </head>
 
 <body>
-  <h1>Bienvenue au site d'épicerie en ligne d'André et co.</h1>
+  <h1 class="titre">Épicerie en ligne d'André et co.</h1>
 
   <!-- Tab links, each one with an onclick event associated with it -->
   <div class="tab">
@@ -26,10 +28,11 @@
       <option value=""></option>
       <option value="lactoseIntolerant">Intolérant(e) au lactose</option>
       <option value="nutAllergy">Allergies aux noix</option>
+      <option value="lactoseAndNuts">Allergies aux noix et au lactose</option>
       <option value="None">Aucun</option>
     </select>
     <p>Préférez-vous des produits organiques ?</p>
-    <select id="organicSelect" name="organicSelect" onchange="populateListProductChoices(this.id,'displayChoice')">
+    <select id="organicSelect" name="organicSelect">
       <option value=""></option>
       <option value="yes">Oui</option>
       <option value="no">Non</option>
@@ -39,7 +42,7 @@
   <div id="Products" class="tabcontent">
     <h3>Vos produits sélectionnés</h3>
     <p>Nous affichons les produits en fonction de vos restrictions.</p>
-    Choisissez des produits à acheter:
+    <p>Choisissez des produits à acheter:</p>
     <div id="displayProduct"></div>
     <br>
     <button id="addCart" type="button" class="block" onclick="selectedItems()">
@@ -55,8 +58,8 @@
 
   <script src="scripts/groceries.js"></script>
   <script src="scripts/main.js"></script>
-  <footer>Site web créé par André.</footer>
-
+  <img src="Images/shopping-trolley_1f6d2.png" alt="Shopping cart image">
+<footer>Site web modifié par André (Basé sur le code fourni par la prof).</footer>
 </body>
 
 </html>

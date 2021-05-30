@@ -77,18 +77,21 @@ var products = [{
     name: "Jus d'orange",
     lactoseIntolerant: true,
     nutAllergy: true,
+    lactoseAndNuts: true,
     price: 7.99
   },
   {
     name: "Champignons",
     lactoseIntolerant: true,
     nutAllergy: true,
+    lactoseAndNuts: true,
     price: 2.79
   },
   {
     name: "Ananas",
     lactoseIntolerant: true,
     nutAllergy: true,
+    lactoseAndNuts: true,
     price: 4.99
   },
   {
@@ -125,6 +128,7 @@ var products = [{
     name: "Broccolis",
     lactoseIntolerant: true,
     nutAllergy: true,
+    lactoseAndNuts: true,
     price: 2.99
   },
   {
@@ -137,30 +141,35 @@ var products = [{
     name: "Tofu",
     lactoseIntolerant: true,
     nutAllergy: true,
+    lactoseAndNuts: true,
     price: 1.99
   },
   {
     name: "Gombo",
     lactoseIntolerant: true,
     nutAllergy: true,
+    lactoseAndNuts: true,
     price: 3.99
   },
   {
     name: "Chou frisé",
     lactoseIntolerant: true,
     nutAllergy: true,
+    lactoseAndNuts: true,
     price: 3.49
   },
   {
     name: "Navets",
     lactoseIntolerant: true,
     nutAllergy: true,
+    lactoseAndNuts:true,
     price: 1.32
   },
   {
     name: "Épinards",
     lactoseIntolerant: true,
     nutAllergy: true,
+    lactoseAndNuts: true,
     price: 3.49
   }
 ];
@@ -172,14 +181,21 @@ var products = [{
 
 function restrictListProducts(prods, restriction) {
   let product_names = [];
+  let product_price = [];
   for (let i = 0; i < prods.length; i += 1) {
     if ((restriction == "lactoseIntolerant") && (prods[i].lactoseIntolerant == true)) {
-      product_names.push(prods[i].name+" : "+prods[i].price);
-      //product_price.push(prods[i].price);
+      product_names.push(prods[i].name + " : " + prods[i].price);
+      product_price.push(parseFloat(prods[i].price));
     } else if ((restriction == "nutAllergy") && (prods[i].nutAllergy == true)) {
-      product_names.push(prods[i].name+" : "+prods[i].price);
+      product_names.push(prods[i].name + " : " + prods[i].price);
+      product_price.push(parseFloat(prods[i].price));
     } else if (restriction == "None") {
-      product_names.push(prods[i].name+" : "+prods[i].price);
+      product_names.push(prods[i].name + " : " + prods[i].price);
+      product_price.push(parseFloat(prods[i].price));
+    }
+    else if((restriction == "lactoseAndNuts") && (prods[i].lactoseAndNuts == true)){
+      product_names.push(prods[i].name + " : " + prods[i].price);
+      product_price.push(parseFloat(prods[i].price));
     }
   }
   return product_names;
@@ -194,11 +210,11 @@ function getTotalPrice(chosenProducts) {
   }
   console.log(tmp);
 
-  for(let j = 0; j< tmp.length; j+=1){
+  for (let j = 0; j < tmp.length; j += 1) {
     tmp[j] = parseFloat(tmp[j]);
   }
 
-  for(let k = 0; k< tmp.length; k+=1){
+  for (let k = 0; k < tmp.length; k += 1) {
     totalPrice += tmp[k];
   }
   return totalPrice;
