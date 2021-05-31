@@ -12,8 +12,28 @@
   text-align: center;
 }
 
-body{
-  background-color: #f7f7e8;
+body,html{
+  background-color: #e4fbff;
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+.tablinks:hover {
+  background-color: #777;
+}
+
+/* Style tab links */
+.tablinks {
+  background-color: #555;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 40px;
+  font-size: 17px;
+  margin-left: 2px;
+  width: 33%;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -43,6 +63,16 @@ img{
   margin-right: auto;
   margin-top: 10px;
   width: 10%;
+}
+
+.customers{
+  height: 210px;
+  width: 210px;
+  border-radius: 100%;
+}
+
+.block{
+  font-size: 15px;
 }
 
 /* Style the tab content */

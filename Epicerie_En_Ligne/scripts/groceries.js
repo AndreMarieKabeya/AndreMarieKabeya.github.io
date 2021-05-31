@@ -170,7 +170,32 @@ var products = [{
     lactoseIntolerant: true,
     nutAllergy: true,
     lactoseAndNuts: true,
+    yes: true,
     price: 3.49
+  },
+  {
+    name: "Fraises",
+    yes: true,
+    no: false,
+    price: 3.10
+  },
+  {
+    name: "Nectarine",
+    yes: true,
+    no: false,
+    price: 3.99
+  },
+  {
+    name: "Pomme",
+    yes: true,
+    no: false,
+    price: 2.75
+  },
+  {
+    name: "Raisin",
+    yes: true,
+    no: false,
+    price: 1.20
   }
 ];
 
@@ -183,17 +208,23 @@ function restrictListProducts(prods, restriction) {
   let product_names = [];
   let product_price = [];
   for (let i = 0; i < prods.length; i += 1) {
-    if ((restriction == "lactoseIntolerant") && (prods[i].lactoseIntolerant == true)) {
+    if ((restriction == "lactoseIntolerant") && (prods[i].lactoseIntolerant == true) || (prods[i].no == true)) {
       product_names.push(prods[i].name + " : " + prods[i].price);
       product_price.push(parseFloat(prods[i].price));
-    } else if ((restriction == "nutAllergy") && (prods[i].nutAllergy == true)) {
+    } else if ((restriction == "nutAllergy") && (prods[i].nutAllergy == true) || (prods[i].no == true)) {
       product_names.push(prods[i].name + " : " + prods[i].price);
       product_price.push(parseFloat(prods[i].price));
     } else if (restriction == "None") {
+      product_names.push(prods[i].name + " : " + prods[i].price || (prods[i].no == true));
+      product_price.push(parseFloat(prods[i].price));
+    }
+
+    else if((restriction == "yes") && (prods[i].yes == true)){
       product_names.push(prods[i].name + " : " + prods[i].price);
       product_price.push(parseFloat(prods[i].price));
     }
-    else if((restriction == "lactoseAndNuts") && (prods[i].lactoseAndNuts == true)){
+
+    else if((restriction == "lactoseAndNuts") && (prods[i].lactoseAndNuts == true) || (prods[i].no == true)){
       product_names.push(prods[i].name + " : " + prods[i].price);
       product_price.push(parseFloat(prods[i].price));
     }
@@ -208,7 +239,6 @@ function getTotalPrice(chosenProducts) {
   for (let i = 0; i < chosenProducts.length; i += 1) {
     tmp.push(chosenProducts[i].slice(-4));
   }
-  console.log(tmp);
 
   for (let j = 0; j < tmp.length; j += 1) {
     tmp[j] = parseFloat(tmp[j]);

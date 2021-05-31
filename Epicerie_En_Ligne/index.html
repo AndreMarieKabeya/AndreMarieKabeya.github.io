@@ -14,25 +14,26 @@
 
   <!-- Tab links, each one with an onclick event associated with it -->
   <div class="tab">
-    <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+    <button class="tablinks" onclick="openInfo(event, 'Client')" id="defaultOpen">Client</button>
     <button class="tablinks" onclick="openInfo(event, 'Products')">Produits</button>
     <button class="tablinks" onclick="openInfo(event, 'Cart')">Panier</button>
   </div>
 
   <!-- Tab content -->
   <div id="Client" class="tabcontent">
-    <h3>Information du client</h3>
-    <p>Parlez-nous de vous.</p>
-    Choisissez une catégorie:
+    <img src="Images/customers.png" alt="" class="customers">
+    <h2>Information du client</h2>
+    <p>Parlez-nous de vous!</p>
+    <p>Choisissez une catégorie:</p>
     <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
       <option value=""></option>
       <option value="lactoseIntolerant">Intolérant(e) au lactose</option>
       <option value="nutAllergy">Allergies aux noix</option>
-      <option value="lactoseAndNuts">Allergies aux noix et au lactose</option>
-      <option value="None">Aucun</option>
+      <option value="lactoseAndNuts">Allergies aux noix et intolérance au lactose</option>
+      <option value="None">Aucune intolérance ou allergies</option>
     </select>
     <p>Préférez-vous des produits organiques ?</p>
-    <select id="organicSelect" name="organicSelect">
+    <select id="organicSelect" name="organicSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
       <option value=""></option>
       <option value="yes">Oui</option>
       <option value="no">Non</option>
@@ -40,7 +41,7 @@
   </div>
 
   <div id="Products" class="tabcontent">
-    <h3>Vos produits sélectionnés</h3>
+    <h2>Vos produits sélectionnés</h2>
     <p>Nous affichons les produits en fonction de vos restrictions.</p>
     <p>Choisissez des produits à acheter:</p>
     <div id="displayProduct"></div>
@@ -51,7 +52,7 @@
   </div>
 
   <div id="Cart" class="tabcontent">
-    <h3>Panier</h3>
+    <h2>Panier</h2>
     <p>Voici votre panier.</p>
     <div id="displayCart"></div>
   </div>
