@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="style/styles.css">
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+  <title>Site alternatif d'André</title>
+</head>
+
+<body>
+  <h1 class="title">Épicerie André et co. 2</h1>
+  <h2 class="title">L'épicerie en tout temps et de n'importe où!</h2>
+  <div class="vertical-icon-bar">
+    <button class="tablinks" onclick="openInfo(event, 'Client')" id="defaultOpen">
+      <a>
+        <img src="Images/customers.png"><br>
+        Client
+      </a>
+    </button>
+
+    <button class="tablinks" onclick="openInfo(event, 'Products')">
+      <a>
+        <img src="Images/products.png">
+        Produits
+      </a>
+    </button>
+
+    <button class="tablinks" onclick="openInfo(event, 'Cart')">
+      <a>
+        <img src="Images/cart.png">
+        Panier
+      </a>
+    </button>
+  </div>
+
+  <!--Tab content-->
+  <div id="Client" class="tabcontent">
+    <h2 class="clientInfo">Information du client</h2>
+    <button class="accordion">Renseignements personnels (optionnels)</button>
+    <div class="panel">
+      <p>Parlez-nous de vous!</p>
+      <form id="client-info">
+        <p>Quel est votre prénom ?</p>
+        <input type="text" name="firstName" value="">
+        <p>Quel est votre nom de famille ?</p>
+        <input type="text" name="lastName" value="">
+      </form><br>
+    </div>
+
+    <button class="accordion">Restrictions alimentaires</button>
+    <div class="panel">
+      <p>Donnez-nous plus d'informations sur vos restrictions alimentaires</p>
+      <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+        <option value=""></option>
+        <option value="lactoseIntolerant">Intolérant(e) au lactose</option>
+        <option value="nutAllergy">Allergies aux noix</option>
+        <option value="lactoseAndNuts">Allergies aux noix et intolérance au lactose</option>
+        <option value="glutenFree">Intolérance au gluten</option>
+        <option value="None">Aucune intolérance ou allergies</option>
+      </select>
+      <p></p>
+    </div>
+
+    <button class="accordion">Choix de produits organiques</button>
+    <div class="panel">
+      <p>Préférez-vous voir les produits organiques seulement ?</p>
+      <!--<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+        <option value=""></option>
+        <option value="firstOption">Oui</option>
+        <option value="secondOption">Non</option>
+      </select>-->
+      <input type="radio" value="firstOption" id="organicCheck" name="organic" onclick="populateListProductChoices(this.id, 'displayProduct')">
+      <label for="firstOption">Oui</label><br>
+      <input type="radio" value="secondOption" id="organicCheck2" name="organic" onclick="populateListProductChoices(this.id, 'displayProduct')">
+      <label for="secondOption">Non</label><br>
+    </div>
+    <br>
+  </div>
+
+  <div id="Products" class="tabcontent">
+    <br>
+    <h2 class="prodSection">Vos produits sélectionnés</h2>
+    <p class="prodSection">Nous affichons les produits en fonction de vos restrictions.</p>
+    <p class="prodSection">Choisissez des produits à acheter:</p>
+    <div id="displayProduct"></div>
+    <br>
+    <!--Code of the automatic slideshow obtained from w3schools-->
+    <div class="slideshow-container">
+      <br>
+      <div class="mySlides fade">
+        <img class="slide" src="Images/shopping1.png">
+      </div>
+
+      <div class="mySlides fade">
+        <img class="slide" src="Images/shopping4.png">
+      </div>
+
+      <div class="mySlides fade">
+        <img class="slide" src="Images/shopping3.png">
+      </div>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <button id="addCart" type="button" class="block" onclick="selectedItems()">
+      Ajoutez les items choisis dans le panier.
+    </button>
+  </div>
+
+  <div id="Cart" class="tabcontent">
+    <h2>Panier</h2>
+    <p>Voici votre panier.</p>
+    <div id="displayCart"></div><br>
+    <button type="button" name="button" onclick="showAndHideForm()">Faire livrer votre commande</button>
+    <div id="form" style="display:none">
+      <br>
+      <p>Votre commande sera livrée chez vous dans les plus brefs délais</p>
+      <form class="" action="index.html" method="post">
+        <p>Entrez votre adresse:</p>
+        <input type="text" name="addresse" value="">
+        <p>Entrez votre numéro de téléphone:</p>
+        <input type="text" name="phone" value="">
+        <p>Mode de paiement préféré:</p>
+        <input type="radio" value="payment1" id="payment" name="payment">
+        <label for="payment1">Visa</label><br>
+        <input type="radio" value="payment2" id="payment2" name="payment">
+        <label for="payment2">Débit</label>
+        <br>
+        <input type="submit" name="" value="Confirmer votre achat">
+      </form>
+    </div>
+  </div>
+
+  <script src="script/main.js"></script>
+  <script src="script/groceries.js"></script>
+  <footer>
+    Site web créé par André Marie Kabeya
+  </footer>
+</body>
+
+</html>
