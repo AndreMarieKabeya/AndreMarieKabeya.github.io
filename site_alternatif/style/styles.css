@@ -103,7 +103,8 @@ img {
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-  background-color: #eee;
+  font-size: 20px;
+  background-color: #fff5fd;
   color: #444;
   cursor: pointer;
   padding: 18px;
