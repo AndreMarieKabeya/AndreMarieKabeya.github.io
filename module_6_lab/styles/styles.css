@@ -1,0 +1,29 @@
+body{
+  background-color: #CAF7E3;
+}
+.clinic{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure{
+  display: inline-block;
+}
+
+.doctor{
+  margin-right: 50px;
+}
+
+.footer{
+  text-align: center;
+}
+
+.btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+figcaption{
+  text-align: center;
+}
