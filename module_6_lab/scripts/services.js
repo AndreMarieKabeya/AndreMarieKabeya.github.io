@@ -17,6 +17,43 @@ function validatePhone(txtPhone) {
   }
 }
 
+//Function to make sure that at least ont checkbox is checked
+function manageCheckBoxes() {
+  var form_data = new FormData(document.querySelector("form"));
+
+  if (!form_data.has("service[]")) {
+    document.getElementById("option_not_selected").style.visibility = "visible";
+    return false;
+  } else {
+    document.getElementById("option_not_selected").style.visibility = "hidden";
+    return true;
+  }
+
+}
+
+function theFunction() {
+  var chosenDay = document.getElementById("dateInput").value;
+  //Code to get time displayed with AM or PM was found on stackOverflow. Link: https://stackoverflow.com/questions/39310579/get-am-pm-from-html-time-input
+  var chosenTime = document.getElementById("timeInput").value.split(':'),
+    hours, minutes, meridian;
+  hours = chosenTime[0];
+  minutes = chosenTime[1];
+  if (hours > 12) {
+    meridian = 'PM';
+    hours -= 12;
+  } else if (hours < 12) {
+    meridian = 'AM';
+    if (hours == 0) {
+      hours = 12;
+    }
+  } else {
+    meridian = 'PM';
+  }
+  
+  alert("Votre rendez-vous a bel et bien était pris avec " + $("#doctors option:selected").text() +
+  " Le " + chosenDay + " à " + hours + ':' + minutes + ' ' + meridian);
+}
+
 function validateCard(cardNum) {
   var a = document.getElementById(cardNum).value;
   var filter = /^[0-9]{14}$/;
@@ -40,9 +77,9 @@ function disableDates(date) {
   if ((date.getDay() === 1 || date.getDay() === 5) && $("#doctors option:selected").text() === "Dr. Mark")
     return [false];
 
-  else if((date.getDay() === 4 || date.getDay() === 6) && $("#doctors option:selected").text() === "Dr. Sarah")
+  else if ((date.getDay() === 4 || date.getDay() === 6) && $("#doctors option:selected").text() === "Dr. Sarah")
     return [false];
-  else if((date.getDay() === 2 || date.getDay() === 3) && $("#doctors option:selected").text() === "Dr. Zack")
+  else if ((date.getDay() === 2 || date.getDay() === 3) && $("#doctors option:selected").text() === "Dr. Zack")
     return [false];
   var string = jQuery.datepicker.formatDate(setDateFormat, date);
   return [unavailableDates.indexOf(string) === -1];
@@ -58,7 +95,7 @@ $(document).ready(function() {
   // The "error" class in style.css defines yellow background and red foreground
   $("#phone").on("change", function() {
     if (!validatePhone("phone")) {
-      alert("Wrong format for phone");
+      alert("Format de numéro incorrect. Veuillez entrer 10 chiffres uniquement et sans aucun caractère spécial");
       $("#phone").val("xxxxxxxxxx");
       $("#phone").addClass("error");
     } else {
@@ -68,7 +105,7 @@ $(document).ready(function() {
 
   $("#debit").on("change", function() {
     if (!validateCard("debit")) {
-      alert("Mauvais format de carte de crédit");
+      alert("Mauvais format de carte de crédit. Veuillez entrez tous les 14 chiffres de votre carte de crédit et sans aucun caractère spécial.");
       $("#debit").val("xxxxxxxxxxxxxx");
       $("#debit").addClass("error");
     } else {

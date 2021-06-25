@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>Laboratoire 6-Service de santé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
@@ -13,7 +16,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <nav class="navbar fixed-top navbar-expand-md bg-primary navbar-dark">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -21,34 +24,63 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#first"><img src="https://img.icons8.com/color/16/000000/about.png" alt="logo" style="width:35px;">À propos</a>
+          <a class="nav-link" href="#first"><img src="Images/info-circle-fill.svg" alt="Icon info" class="siteIcon">
+            <h5 class="textIcon">À propos</h5>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#second"><img src="Images/service.png" alt="logo" width="70px;">Services</a>
+          <a class="nav-link" href="#second"><img src="Images/journal-medical.svg" alt="Service Icon" class="siteIcon">
+            <h5 class="textIcon">Services</h5>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#third"><img src="Images/expert.png" alt="expertIcon" width="35px;">Nos experts</a>
+          <a class="nav-link" href="#third"><img src="Images/people-fill.svg" alt="expert Icon" class="siteIcon">
+            <h5 class="textIcon">Nos experts</h5>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#fourth"><img src="Images/rendezVous.png" alt="logo" width="30px;">Prendre rendez-vous</a>
+          <a class="nav-link" href="#fourth"><img src="Images/calendar-check-fill.svg" alt="appointment icon" class="siteIcon">
+            <h5 class="textIcon">Prendre rendez-vous</h5>
+          </a>
         </li>
       </ul>
     </div>
+    <br>
   </nav>
   <br>
+  <br>
   <div class="container-lg">
-    <h1><img src="Images/logo.png" alt="another logo" width="130px;" height="130px;"> Bienvenue chez <strong>Les Animaux D'abord !</strong></h1>
+    <br><br><br>
+    <h1 style="text-align:center;"><img src="Images/logo.png" alt="another logo" width="130px;" height="130px;"> Bienvenue chez <strong>Les Animaux D'abord !</strong></h1>
+    <h2 style="font-size: 25px; text-align:center;">Notre mission est de prende soin de tous vos animaux préférés!</h2>
     <div class="container" id="first">
-      <h3><img src="https://img.icons8.com/color/16/000000/about.png" alt="logo" style="width:35px;">À propos</h3>
+      <h1><img src="Images/info-circle-fill.svg" class="siteIcon" alt="about icon"> À propos</h1>
       <div class="p-3 my-3 border bg-light">
-        <img src="Images/clinic.png" alt="Image d'une clinique" class="clinic">
-        <p class="p-4 my-3" style="font-size: 25px">Nous sommes une clinique située au 124 rue des Animaux,ON,K1L 2M3</p>
-        <p style="font-size: 25px; padding-left: 1.5rem">Notre mission est de prende soin de tous vos animaux préférés!</p>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <img src="Images/clinic.png" alt="Image d'une clinique" class="clinic">
+              <p class="p-4 my-3" style="font-size: 25px; text-align:center;">Nous sommes une clinique située au 124 rue des Animaux,ON,K1L 2M3</p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <h1>Nos heures d'ouverture</h1>
+              <div class="col-12">
+                <h5>Lundi : 7h00 - 23h00</h5>
+                <h5>Mardi : 7h00 - 23h00</h5>
+                <h5>Mercredi : 7h00 - 23h00</h5>
+                <h5>Jeudi : 7h00 - 23h00</h5>
+                <h5>Vendredi : 7h00 - 23h00</h5>
+                <h5>Samedi : 7h00 - 23h00</h5>
+                <h5>Dimanche : 7h00 - 23h00</h5>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="container" id="second">
-      <h3><img src="Images/service.png" alt="logo" width="70px;">Services</h3>
+      <h1><img src="Images/journal-medical.svg" class="siteIcon" alt="service logo"> Services</h1>
       <div class="p-3 my-3 border bg-light">
         <p style="font-size: 25px;">Voici un aperçu de nos services ainsi que leur prix.</p>
         <br>
@@ -91,95 +123,105 @@
 
     <!-- This section contains elements to be validated -->
     <!-- Refer to the JavaScript file, where JQuery is used to listen to those inputs using the ids -->
-    <div class="container" id="third">
-      <h3><img src="Images/expert.png" alt="expert icon" width="70px;">Nos experts</h3>
-      <p class="expert" style="font-size: 25px;">Voici notre équipe d'experts!</p>
-      <figure>
-        <img class="doctor" src="Images/doctor1.png" alt="first doctor image" width="300px;" height="300px;">
-        <figcaption>Dr. Mark</figcaption>
-        <figcaption>Spécialiste en chirurgie canine.</figcaption>
-      </figure>
-      <figure>
-        <img class="doctor" src="Images/doctor2.png" alt="first doctor image" width="300px;" height="300px;">
-        <figcaption>Dr. Sarah</figcaption>
-        <figcaption>Spécialiste en nutrition animale.</figcaption>
-      </figure>
-      <figure>
-        <img class="doctor" src="Images/doctor3.png" alt="first doctor image" width="300px;" height="300px;">
-        <figcaption>Dr. Zack</figcaption>
-        <figcaption>Spécialiste en radiographie animale.</figcaption>
-      </figure>
+    <h1><img src="Images/people-fill.svg" class="siteIcon" alt="expert icon"> Nos experts</h1>
+    <p class="expert" style="font-size: 25px;">Voici notre équipe d'experts!</p>
+    <div class="card-group" id="third">
+      <div class="card">
+        <img class="card-img-top" src="Images/doctor1.png" alt="first doctor image">
+        <div class="card-body">
+          <h5 class="card-title">Dr. Mark</h5>
+          <p class="card-text">Spécialiste en chirurgie canine</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="Images/doctor2.png" alt="second doctor image">
+        <div class="card-body">
+          <h5 class="card-title">Dr. Sarah</h5>
+          <p class="card-text">Spécialiste en nutrition animale.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="Images/doctor3.png" alt="third doctor image" width="219px;" height="243px;">
+        <div class="card-body">
+          <h5 class="card-title">Dr. Zack</h5>
+          <p class="card-text">Spécialiste en radiographie animale.</p>
+        </div>
+      </div>
     </div>
 
     <div class="container" id="fourth">
-      <h3><img src="Images/rendezVous.png" alt="logo" width="30px;">Prendre rendez-vous</h3>
+      <br>
+      <h1><img src="Images/calendar-check-fill.svg" class="siteIcon" alt="Appointment icon"> Prendre rendez-vous</h1>
       <br>
       <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Pour nous laisser vos coordonnées et prendre un rendez-vous,cliquez ici!
       </button>
       <div class="collapse" id="collapseExample">
         <div class="card card-body">
-          <form class="row g-3 needs-validation">
+          <form class="row g-3 needs-validation" onsubmit="theFunction()">
             <div class="col-md-6">
               <label for="name" class="form-label">Nom</label>
-              <input type="text" class="form-control" id="name" required>
+              <input type="text" class="form-control" id="name" pattern="[a-zA-Z- ]+" title="Votre nom est requis" required>
             </div>
             <div class="col-md-6">
               <label for="firstName" class="form-label">Prénom</label>
-              <input type="text" class="form-control" id="firstName" required>
+              <input type="text" class="form-control" id="firstName" title="Votre prénom est requis" required>
             </div>
             <div class="col-12">
               <label for="inputAddress" class="form-label">Adresse</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" title="Votre adresse est requise" required>
             </div>
             <div class="col-12">
               <label for="phone" class="form-label">Numéro de téléphone</label>
-              <input type="text" class="form-control" id="phone" placeholder="1234567890">
+              <input type="text" class="form-control" id="phone" placeholder="1234567890" title="Votre numéro de téléphone est requis" required>
             </div>
             <div class="col-md-6">
               <label for="email" class="form-label">Adresse courriel</label>
-              <input type="email" class="form-control" id="email">
+              <input type="email" class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Votre adresse courriel est requise" required>
             </div>
             <div class="col-md-4">
               <label for="inputState" class="form-label">Province</label>
-              <select id="inputState" class="form-select">
-                <option selected>Votre choix</option>
-                <option>ON</option>
-                <option>QC</option>
+              <select id="inputState" class="form-select" title="Choisissez l'une des deux provinces proposées" required>
+                <option value=""></option>
+                <option value="ON">ON</option>
+                <option value="QC">QC</option>
               </select>
             </div>
             <div class="col-md-2">
               <label for="inputZip" class="form-label">Code postal</label>
-              <input type="text" class="form-control" id="inputZip">
+              <input type="text" class="form-control" id="inputZip" title="Votre code postal est requis" required>
             </div>
             <div class="col-md-6">
+              <div style="visibility:hidden; color:red; " id="option_not_selected">
+                Choisissez au moins un des services avant de confirmer votre rendez-vous.
+              </div>
               <label for="services" class="form-label">Veuillez choisir les services que vous souhaitez recevoir:</label>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" name="service[]" value="radiographie" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
                   Radiographie numérique
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <input class="form-check-input" type="checkbox" value="dentisterie" name="service[]" id="flexCheckChecked">
                 <label class="form-check-label" for="flexCheckChecked">
                   Dentisterie
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" value="vaccination" name="service[]" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
                   Vaccination
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <input class="form-check-input" type="checkbox" value="consultation" name="service[]" id="flexCheckChecked">
                 <label class="form-check-label" for="flexCheckChecked">
                   Consulation vétérinaire
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <input class="form-check-input" type="checkbox" value="nutrition" name="service[]" id="flexCheckChecked">
                 <label class="form-check-label" for="flexCheckChecked">
                   Nutrition
                 </label>
@@ -188,29 +230,26 @@
             <div class="col-md-6">
               <label for="doctors">Choisissez le docteur que vous souhaitez voir:</label>
 
-              <select name="doctors" id="doctors">
+              <select name="doctors" id="doctors" title="Choisissez un docteur pami ceux proposés" required>
+                <option value=""></option>
                 <option value="Mark">Dr. Mark</option>
                 <option value="Zack">Dr. Zack</option>
                 <option value="Sarah">Dr. Sarah</option>
               </select>
             </div>
             <div class="col-md-6">
-              <p>Choisissez un jour pour votre rendez-vous:<input type="text" id="dateInput"></p>
+              <p>Choisissez un jour pour votre rendez-vous: <input type="text" name="day" id="dateInput" title="Veuillez choisir la journée qui vous conviendrait le mieux" required></p>
             </div>
             <div class="col-md-6">
-              <p>Choisissez une heure pour votre rendez-vous:<input type="time" id="timeInput"></p>
+              <p>Choisissez une heure pour votre rendez-vous: <input type="time" id="timeInput" title="Veuillez choisir l'heure qui vous arrange le plus" required></p>
             </div>
-            <p><img src="Images/creditCard.png" alt="credit card icon" width="50px;"> Carte de crédit: <input type="text" id="debit" title="Votre numéro de carte de crédit est nécessaire si jamais vous annulez sans prévenir."></p>
+            <p><img src="Images/creditCard.png" alt="credit card icon" width="50px;"> Carte de crédit: <input type="text" id="debit" title="Votre numéro de carte de crédit est nécessaire si jamais vous annulez sans prévenir." required></p>
             <div class="col-12">
-              <button type="submit" class="btn btn-primary">Confirmer</button>
+              <button type="submit" class="btn btn-primary" onclick="return manageCheckBoxes()">Confirmer</button>
             </div>
           </form>
         </div>
       </div>
-      <!--
-      <p>Phone Number Example <input value="(1234)" type="text" id="phone"></p>
-      <p>Credit Card: <input type="text" id="debit" title="We ask for your credit card number in case of no-show, 20$ will be charged."></p>-->
-    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles/styles.css">
